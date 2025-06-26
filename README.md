@@ -40,13 +40,12 @@ GenPass foi desenvolvido para facilitar o controle e personalização da rotina 
 - **MySQL Workbench** – Modelagem e gerenciamento do banco de dados relacional
 - **TypeORM** – ORM para integração entre a aplicação e o banco de dados
 - **Insomnia** – Testes e simulação de rotas da API
-- **Microsoft Word** – Documentação e relatórios
+- **Microsoft Word** – Documentação 
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Contribuidores
 
-## Contribuidores:
 - @dgsferreira
 - @giovannabreinack
 - @giubarreto
@@ -54,23 +53,3 @@ GenPass foi desenvolvido para facilitar o controle e personalização da rotina 
 - @mateuscamargo
 - @Munnizdev
 - @ysabellax
-
-> Pré-requisitos: Node.js, MySQL, Nest CLI
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/genpass.git
-
-# 2. Acesse a pasta do projeto
-cd genpass
-
-# 3. Instale as dependências
-npm install
-
-# 4. Configure o banco de dados no arquivo .env
-
-# 5. Rode as migrations (se aplicável)
-npm run typeorm migration:run
-
-# 6. Inicie o servidor
-npm run start:dev
