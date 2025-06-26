@@ -13,7 +13,7 @@ import {
 import { Treino } from '../entities/treino.entity';
 import { TreinoService } from './../services/treino.service';
 
-@Controller('/postagens')
+@Controller('/treinos')
 export class TreinoController {
   constructor(private readonly TreinoService: TreinoService) {}
 
@@ -23,12 +23,11 @@ export class TreinoController {
     return this.TreinoService.findAll();
   }
 
-  /*
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
   findById(@Param('id', ParseIntPipe) id: number): Promise<Treino> {
-    return this.TreinoService.findById();
-  }*/
+    return this.TreinoService.findById(id);
+  }
 
   @Get('/tipo/:tipo')
   @HttpCode(HttpStatus.OK)
