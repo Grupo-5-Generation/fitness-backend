@@ -1,5 +1,17 @@
-import { Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Body, Put, Delete } from "@nestjs/common";
-import { Treino } from "../entities/treinos.entity";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  ParseIntPipe,
+  Post,
+  Put,
+} from '@nestjs/common';
+import { Treino } from '../entities/treino.entity';
+import { TreinoService } from './../services/treino.service';
 
 @Controller('/postagens')
 export class TreinoController {
@@ -11,15 +23,17 @@ export class TreinoController {
     return this.TreinoService.findAll();
   }
 
+  /*
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
   findById(@Param('id', ParseIntPipe) id: number): Promise<Treino> {
-    return this.TreinoService.findById(id);
-  }
-  @Get('/titulo/:titulo')
+    return this.TreinoService.findById();
+  }*/
+
+  @Get('/tipo/:tipo')
   @HttpCode(HttpStatus.OK)
-  findAllByTitulo(@Param('titulo') titulo: string): Promise<Treino[]> {
-    return this.TreinoService.findAllByTitulo(titulo);
+  findAllByTipo(@Param('tipo') tipo: string): Promise<Treino[]> {
+    return this.TreinoService.findAllByTipo(tipo);
   }
 
   @Post()

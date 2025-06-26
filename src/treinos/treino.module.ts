@@ -1,8 +1,8 @@
+import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import Module from 'module';
-import { TreinoController } from './controllers/treinos.controller';
-import { Treino } from './entities/treinos.entity';
-import { TreinoService } from './services/treinos.service';
+import { TreinoController } from './controllers/treino.controller';
+import { Treino } from './entities/treino.entity';
+import { TreinoService } from './services/treino.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Treino])],

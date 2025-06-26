@@ -1,9 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, ILike, Repository } from 'typeorm';
-import { Treino } from '../entities/treinos.entity';
-import { create } from 'domain';
-import { async } from 'rxjs';
+import { Treino } from './../entities/treino.entity';
 
 @Injectable()
 export class TreinoService {
@@ -17,17 +15,14 @@ export class TreinoService {
   }
 
   async findById(id: number): Promise<Treino> {
-    const Treino = await this.treinoRepository.findOne({
+    const treino = await this.treinoRepository.findOne({
       where: {
         id,
       },
     });
-}
-
     if (!treino)
       throw new HttpException('Treino não encontrado!', HttpStatus.NOT_FOUND);
-
-    return Treino;
+    return treino;
   }
 
   async findAllByTipo(tipo: string): Promise<Treino[]> {
@@ -39,13 +34,13 @@ export class TreinoService {
   }
 
   async create(treino: Treino): Promise<Treino> {
-    return await this.treinoRepository.save(Treino);
+    return await this.treinoRepository.save(treino);
   }
 
   async update(treino: Treino): Promise<Treino> {
-    await this.findById(Treino.id);
+    await this.findById(treino.id);
 
-    return await this.treinoRepository.save(Treino);
+    return await this.treinoRepository.save(treino);
   }
 
   async delete(id: number): Promise<DeleteResult> {

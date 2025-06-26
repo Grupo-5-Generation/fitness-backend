@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Treino } from './treinos/entities/treino.entity';
+import { TreinoModule } from './treinos/treino.module';
 
 @Module({
   imports: [
@@ -10,9 +12,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'root',
       database: 'db_fitness',
-      entities: [],
+      entities: [Treino],
       synchronize: true,
+      logging: true,
     }),
+    TreinoModule,
   ],
   controllers: [],
   providers: [],

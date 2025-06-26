@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsInt, IsNotEmpty, Min } from 'class-validator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'tb_treinos' })
@@ -15,10 +15,14 @@ export class Treino {
   exercicios: string;
 
   @IsNotEmpty()
-  @Column({ nullable: false })
-  repetioes: number;
+  @IsInt()
+  @Min(1)
+  @Column({ type: 'int', default: 0, nullable: false })
+  repeticoes: number;
 
   @IsNotEmpty()
-  @Column({ nullable: false })
+  @IsInt()
+  @Min(1)
+  @Column({ type: 'int', default: 0, nullable: false })
   series: number;
 }
