@@ -14,7 +14,6 @@ import { TreinoModule } from './treinos/treino.module';
       database: 'db_fitness',
       entities: [Treino],
       synchronize: true,
-      logging: true,
     }),
     TreinoModule,
   ],
